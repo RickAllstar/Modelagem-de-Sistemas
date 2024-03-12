@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Cadastro do Aluno</title>
+    <title>Cadastro do Paciente</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <!-- <a class="back-page" href="index.html"><i class="fa-solid fa-circle-chevron-left"></i></a>!-->
     <div class="main-geral">
         <div class="left-geral"> 
-                <h1>Cadastro do aluno</h1>
+                <h1>Cadastro do Paciente</h1>
             
             <img src="../Sistema escolar/image/student.svg" class="img" alt="aluno">
         </div>
@@ -19,27 +19,27 @@
         <div class="right-geral">
             <div class="card-cadastro">
                 <h1>Cadastre-se</h1>
-                <form action="cadastro-aluno.php" method="post">
+                <form action="cadastro-paciente.php" method="post">
                     <div class="textfield">
-                    <label for="matricula">Matrícula:</label>
+                    <label for="Nome">Nome Completo:</label>
                     <input type="text" id="matricula"
-                     name="matricula" required placeholder="Matrícula">
+                     name="matricula" required placeholder="Nome">
                     </div>
                     <div class="textfield">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" required placeholder="Nome completo">
+                    <label for="nome">Telefone:</label>
+                    <input type="text" id="nome" name="nome" required placeholder="Telefone">
                     </div>
                     <div class="textfield">
                     <label for="cpf">CPF:</label>
-                    <input type="text" id="cpf" name="cpf" required placeholder="000.000.000-00">
+                    <input type="text" id="cpf" name="cpf" required placeholder="CPF">
                     </div>
                     <div class="textfield">
-                    <label for="turma">Turma:</label>
-                    <input type="text" id="turma" name="turma" required placeholder="HT-SIS-000">
+                    <label for="turma">Endereço:</label>
+                    <input type="text" id="turma" name="turma" required placeholder="Endereço">
                     </div>
                     <div class="textfield">
                     <label for="senha">Senha:</label>
-                    <input type="password" id="senha" name="senha" required placeholder="8 caractéres">
+                    <input type="password" id="senha" name="senha" required placeholder="Senha">
                     </div>
                     <button class="btn-login" type="submit">Cadastrar</button>
                 </form>
