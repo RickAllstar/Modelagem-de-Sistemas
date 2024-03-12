@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Dashboard do Aluno</title>
+    <style>
+        /* Adicione seu estilo CSS aqui conforme necessário */
+        .prize {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease-out;
+        }
+
+        .prize:hover {
+            transform: scale(1.05);
+        }
+
+        .prize img {
+            width: 100%;
+            height: auto;
+            transition: opacity 0.3s ease-out;
+        }
+
+        .prize:hover img {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dashboard do Aluno</h1>
+        <h2>Escolher Prêmios e Trocar por <span style="color: #ffc457;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">RENZOCOINS</span></h2>
+        
+        <div class="prizes">
+            <div class="prize" onclick="trocarPorRenzoCoins(1)">
+                <img src="image/p1.jpg" alt="Prêmio 1">
+                <h3>SmartWatch</h3>
+                <p>40 RENZOCOINS</p>
+            </div>
+
+            <div class="prize" onclick="trocarPorRenzoCoins(2)">
+                <img src="image/p2.jpg" alt="Prêmio 2">
+                <h3>Headset Gamer</h3>
+                <p>35 RENZOCOINS</p>
+            </div>
+
+            <div class="prize" onclick="trocarPorRenzoCoins(3)">
+                <img src="image/p3.jpg" alt="Prêmio 3">
+                <h3>Curso Python básico</h3>
+                <p>35 RENZOCOINS</p>
+            </div>
+
+            <div class="prize" onclick="trocarPorRenzoCoins(4)">
+                <img src="image/p4.jpg" alt="Prêmio 4">
+                <h3>Mousepad Gamer</h3>
+                <p>32 RENZOCOINS</p>
+            </div>
+
+            <div class="prize" onclick="trocarPorRenzoCoins(5)">
+                <img src="image/p5.jpg" alt="Prêmio 5">
+                <h3>Curso JavaScript</h3>
+                <p>25 RENZOCOINS</p>
+            </div>
+
+            <div class="prize" onclick="trocarPorRenzoCoins(6)">
+                <img src="image/p6.jpg" alt="Prêmio 6">
+                <h3>Mouse Gamer</h3>
+                <p>25 RENZOCOINS</p>
+            </div>
+        </div>
+        
+        <a href="index.html">Sair</a>
+    </div>
+
+    <script>
+        function trocarPorRenzoCoins(idDoPremio) {
+            // Adicione a lógica aqui para processar a troca do prêmio por RENZOCOINS
+            // Você pode usar AJAX para enviar a solicitação ao servidor e atualizar a interface do usuário
+            alert("Prêmio " + idDoPremio + " trocado por RENZOCOINS!");
+        }
+    </script>
+</body>
+</html>

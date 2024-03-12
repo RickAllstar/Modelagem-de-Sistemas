@@ -1,0 +1,244 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+body * {
+  box-sizing: border-box;
+}
+/*PAGINA INICIAL*/
+.main-login {
+  width: 100vw;
+  height: 100vh;
+  background-color: #3a3a3a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left-login {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.left-login h1 {
+  color: #e4e4e4;
+}
+/* .back-page {
+  background-color: #002e2900;
+  color: #e4e4e4;
+} */
+.left-login h1 {
+  font-size: 3vw;
+  color: #00bfa6;
+}
+.img {
+  width: 35vw;
+}
+.right-login {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.right-login h1 {
+  color: #e4e4e4;
+}
+.card-login {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 35px;
+  background-color: #414141;
+  border-radius: 20px;
+  box-shadow: 0px 10px 40px #0f0f0f;
+}
+
+.botoes {
+  width: 100%;
+  padding: 16px 0px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  box-shadow: 4px 8px 35px -9px #00dfc1c7;
+}
+/* PAGINA CADASTRO ALUNO */
+.main-geral {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-color: #3a3a3a;
+  justify-content: center;
+  align-items: center;
+}
+.left-geral {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.left-geral h1 {
+  font-size: 3vw;
+  color: #00bfa6;
+}
+.right-geral {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.right-geral h1 {
+  color: #e4e4e4;
+  margin: 20px;
+}
+.card-geral {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 35px;
+  background-color: #414141;
+  border-radius: 20px;
+  box-shadow: 0px 10px 40px #0f0f0f;
+}
+.card-cadastro {
+  width: 60%;
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 35px;
+  background-color: #414141;
+  border-radius: 20px;
+  box-shadow: 0px 10px 40px #0f0f0f;
+}
+.botoes {
+  width: 100%;
+  padding: 16px 0px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  margin-bottom: 10px;
+  text-align: center;
+  box-shadow: 4px 8px 35px -9px #00dfc1c7;
+}
+.textfield {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 10px 0px;
+}
+.textfield input {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  background: #555;
+  color: #fff;
+  font-size: 12pt;
+  box-shadow: 0px 10px 40px #0f0f0f;
+  outline: none;
+  box-sizing: border-box;
+}
+.textfield label {
+  color: #f0ffffde;
+  margin-bottom: 10px;
+}
+.textfield input::placeholder {
+  color: #f5f5f5b9;
+}
+.btn-login {
+  margin-top: 32px;
+  width: 100%;
+  padding: 16px 0px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #e4e4e4;
+  background-color: #00dfc1c7;
+  box-shadow: 4px 8px 35px -9px #00dfc1c7;
+}
+.btn-login:hover {
+  transition-duration: 1ms;
+  background-color: #009783;
+  box-shadow: 4px 8px 35px -9px #002e29;
+}
+/* PAGINA LOGIN ALUNO */
+/* PAGINA LOGIN PROFESSOR */
+.main-login a {
+  display: inline-block;
+  margin: 15px 0;
+  padding: 10px 20px;
+  background-color: #00bfa6;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.card-login a:hover {
+  transition-duration: 1ms;
+  background-color: #009783;
+  box-shadow: 4px 8px 35px -9px #002e29;
+}
+
+@media only screen and (max-width: 950px) {
+  .card-login,
+  .card-geral,
+  .card-cadastro {
+    width: 75%;
+  }
+  body {
+    background-color: #3a3a3a;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .main-login,
+  .main-geral {
+    flex-direction: column;
+  }
+  .left-login,
+  .left-geral > h1 {
+    display: none;
+  }
+  .left-login,
+  .left-geral {
+    width: 100%;
+    height: auto;
+  }
+  .right-login,
+  .right-geral {
+    width: 100%;
+    height: auto;
+  }
+  .img {
+    width: 35vh;
+  }
+  .card-geral,
+  .card-login,
+  .card-cadastro {
+    width: 80%;
+    height: 90%;
+  }
+}
