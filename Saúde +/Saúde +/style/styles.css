@@ -228,7 +228,8 @@ body * {
 /* Pagina inicial  */
 @media only screen and (max-width: 600px) {
   .main-login,
-  .main-geral {
+  .main-geral,
+  .hero {
     flex-direction: column;
   }
 
@@ -251,7 +252,8 @@ body * {
   }
   .card-geral,
   .card-login,
-  .card-cadastro {
+  .card-cadastro,
+  .card {
     width: 80%;
     height: 90%;
   }
@@ -277,15 +279,17 @@ a {
 }
 
 .logo {
-  margin-top: 32px;
+  margin-top: -50PX;
   font-size: 48px;
   color: #00dbc2;
 }
 
 .nav-list {
+  margin-top: -50px;
   display: flex;
   gap: 32px;
   list-style: none;
+
 }
 
 .nav-list a {
@@ -336,6 +340,8 @@ a {
 
   .nav-list {
     position: fixed;
+    display: flex;
+    margin-top: -29px;
     top: 0;
     left: 0;
     width: 100vw;
@@ -452,3 +458,45 @@ a {
     display: none;
   }
 }
+
+
+/* DASHBOARD PACIENTE RENZO */
+  /* Adicione seu estilo CSS aqui conforme necessário */
+  .card {
+    height: 30%;
+    width: 15%;
+    margin: 10px 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease-out;
+}
+
+.card:hover {
+    transform: scale(1.0);
+}
+
+.card-img-top {
+    display: flex;
+    width: 200px;
+    height: 150px;
+    transition: opacity 0.3s ease-out;
+}
+
+.card:hover img {
+    opacity: 0.5;
+}
+
+.card-text {
+    font-size: 10px;
+}
+@media only screen and (max-width: 600px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 80%;
+    height: 90%;
+  }
+  }
