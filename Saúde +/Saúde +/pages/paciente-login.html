@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/styles.css" />
+    <title>Login do Paciente</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <a href="../index.html" class="logo"
+          ><img src="../image/Saúde+.svg" height="200px" width="200px" alt=""
+        /></a>
+        <button class="hamburger"></button>
+        <ul class="nav-list">
+          <li><a href="./pages/paciente-login.html">Login</a></li>
+          <li><a href="./pages/paciente-cadastro.html">Cadastre-se</a></li>
+          <li><a href="./pages/medico-login.html">Sou Médico</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="main-geral">
+      <div class="left-geral">
+        <img
+          class="img"
+          src="../image/Medical research-bro.svg"
+          class="img"
+          alt="aluno"
+        />
+      </div>
+
+      <div class="right-geral">
+        <div class="card-geral">
+          <h1>Paciente login</h1>
+          <form action="paciente-dashboard.html" method="post">
+            <div class="textfield">
+              <label for="matricula">Nome:</label>
+              <input
+                type="text"
+                id="matricula"
+                name="nome"
+                required
+                placeholder="Nome"
+              />
+            </div>
+            <div class="textfield">
+              <label for="senha">Senha:</label>
+              <input
+                type="password"
+                id="senha"
+                name="senha"
+                required
+                placeholder="Senha"
+              />
+            </div>
+            <input type="checkbox" value="lsRememberMe" class="rememberMe" />
+            <label class="rememberMe" for="rememberMe">lembre de mim</label>
+            <button class="btn-login" type="submit">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
