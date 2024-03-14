@@ -281,10 +281,14 @@ a {
 .logo {
   color: #00dbc2;
 }
-.navbar-c {
-  flex-basis: 100%;
-  flex-grow: none;
-  align-items: center;
+.nav-link {
+  color: #00dbc2;
+}
+.navbar-nav .nav-link {
+  color: #34e6e4;
+}
+.navbar-nav .nav-link:hover {
+  color: #2891a3;
 }
 
 .nav-list {
