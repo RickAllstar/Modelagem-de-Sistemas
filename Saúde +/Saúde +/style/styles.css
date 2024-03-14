@@ -279,9 +279,12 @@ a {
 }
 
 .logo {
-  margin-top: -50PX;
-  font-size: 48px;
   color: #00dbc2;
+}
+.navbar-c {
+  flex-basis: 100%;
+  flex-grow: none;
+  align-items: center;
 }
 
 .nav-list {
@@ -289,7 +292,6 @@ a {
   display: flex;
   gap: 32px;
   list-style: none;
-
 }
 
 .nav-list a {
@@ -459,36 +461,35 @@ a {
   }
 }
 
-
 /* DASHBOARD PACIENTE RENZO */
-  /* Adicione seu estilo CSS aqui conforme necessário */
-  .card {
-    height: 30%;
-    width: 15%;
-    margin: 10px 20px;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s ease-out;
+/* Adicione seu estilo CSS aqui conforme necessário */
+.card {
+  height: 30%;
+  width: 15%;
+  margin: 10px 20px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease-out;
 }
 
 .card:hover {
-    transform: scale(1.0);
+  transform: scale(1);
 }
 
 .card-img-top {
-    display: flex;
-    width: 200px;
-    height: 150px;
-    transition: opacity 0.3s ease-out;
+  display: flex;
+  width: 200px;
+  height: 150px;
+  transition: opacity 0.3s ease-out;
 }
 
 .card:hover img {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 .card-text {
-    font-size: 10px;
+  font-size: 10px;
 }
 @media only screen and (max-width: 600px) {
   .hero {
@@ -499,4 +500,4 @@ a {
     width: 80%;
     height: 90%;
   }
-  }
+}
