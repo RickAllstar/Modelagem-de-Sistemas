@@ -1,38 +1,37 @@
+<!DOCTYPE html>
 <?php
-// Verificar se o formulário foi submetido
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Verificar se os campos "cpf" e "senha" foram enviados no formulário
-    if (isset($_POST['cpf']) && isset($_POST['senha'])) {
-        // Obter os valores dos campos do formulário
-        $cpf = $_POST['cpf'];
-        $senha = $_POST['senha'];
+// REVISADO - OK
 
-        // Conectar ao banco de dados
-        $conn = new mysqli('localhost', 'root', '', 'clinica_medica');
-
-        // Verificar a conexão
-        if ($conn->connect_error) {
-            die("Erro de conexão: " . $conn->connect_error);
-        }
-
-        // Consulta SQL para verificar se as credenciais estão corretas
-        $sql = "SELECT Paciente FROM login WHERE cpf = '$cpf' AND senha = '$senha'";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            // Credenciais corretas, redirecionar para a página paciente-dashboard.html
-            header("Location: ../pages/paciente-dashboard.html");
-            exit();
-        } else {
-            // Credenciais incorretas, mostrar mensagem de erro
-            echo "CPF ou senha incorretos.";
-        }
-
-        // Fechar conexão com o banco de dados
-        $conn->close();
-    } else {
-        echo "Campos 'cpf' e 'senha' não foram recebidos.";
-    }
-    
-}
+include_once("connection.php");
 ?>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Login</title>
+        <script language="javascript">
+            function sucesso(){
+                window.location='../pages/paciente-dashboard.html';
+            }
+            function failed(){
+                setTimeout("window.location='../pages/paciente-login.html'", 2000);
+            }
+        </script>
+    </head>
+    <body>
+        <?php
+            $cpf = $_POST['cpf'];
+            $senha = $_POST['senha'];
+            $consulta = mysqli_query($connection,"SELECT * FROM Paciente WHERE cpf = '$cpf' AND senha = '$senha'") or die (mysqli_error($connection));
+            $linhas = mysqli_num_rows($consulta);
+            
+            if($linhas == 0){
+                echo"<br><br><br><br><br><br><p align = 'center'>Por favor aguarde&hellip;</p>";
+                echo"<script language='javascript'>failed()</script>";
+            } else {
+                $_SESSION["cpf"]=$_POST["cpf"];
+                $_SESSION["senha"]=$_POST["senha"];
+                echo"<script language='javascript'>sucesso()</script>";
+            }
+        ?>
+    </body> 
+</html>
