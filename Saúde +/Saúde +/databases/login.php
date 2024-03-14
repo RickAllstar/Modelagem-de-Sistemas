@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($result->num_rows > 0) {
             // Credenciais corretas, redirecionar para a página paciente-dashboard.html
-            header("Location: paciente-dashboard.html");
+            header("Location: ../pages/paciente-dashboard.html");
             exit();
         } else {
             // Credenciais incorretas, mostrar mensagem de erro
@@ -33,5 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "Campos 'cpf' e 'senha' não foram recebidos.";
     }
+    
 }
 ?>
