@@ -7,23 +7,28 @@
 </head>
 <body>
     <?php
-    // estabelece conexão com o servidor e BD
+    // Estabelece conexão com o servidor e BD
     include_once('connection.php');
 
-    // recebe dados do formulario
-    $matricula = $_POST['matricula'];
+    // Recebe dados do formulário
     $nome = $_POST['nome'];
     $cpf = $_POST['cpf'];
-    $turma = $_POST['turma'];
+    $telefone = $_POST['telefone'];
+    $endereco = $_POST['endereco'];
     $senha = $_POST['senha'];
 
-    $insere = mysqli_query($connection, "INSERT INTO Aluno(Matricula_aluno,Nome_aluno,Cpf_aluno,Turma,Senha_aluno)
-                                        VALUES($matricula,$nome,$cpf,$turma,$senha)") 
+    // Insere os dados na tabela de Pacientes
+    $insere = mysqli_query($connection, "INSERT INTO Paciente(nome, telefone, cpf, endereco, senha)
+                                        VALUES('$nome','$cpf','$telefone','$endereco','$senha')") 
                                             or die(mysqli_error());
-                                        echo"Aluno Cadastrado com sucesso!";
-            
-
-    ?>
     
+    // Se o registro for inserido com sucesso, redirecione para outra página
+    if ($insere) {
+        header("Location: ../pages/paciente-login.html"); // Substitua 'outra_pagina.php' pelo URL correto
+        exit();
+    } else {
+        echo "Erro ao cadastrar paciente.";
+    }
+    ?>
 </body>
 </html>

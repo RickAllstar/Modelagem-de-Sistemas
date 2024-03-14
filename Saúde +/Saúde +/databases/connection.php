@@ -1,7 +1,7 @@
 <?php
-$conection = new mysqli("localhost","root","","sistema_escolar");
-    if($conection -> connect_error){
-                       die($conection -> connect_error);
+$connection = new mysqli("localhost","root","","clinica_medica");
+    if($connection -> connect_error){
+                       die($connection -> connect_error);
     }
 
 ?>
