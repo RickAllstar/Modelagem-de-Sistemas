@@ -12,14 +12,14 @@
 
     // Recebe dados do formulário
     $nome = $_POST['nome'];
-    $cpf = $_POST['cpf'];
     $telefone = $_POST['telefone'];
+    $cpf = $_POST['cpf'];
     $endereco = $_POST['endereco'];
     $senha = $_POST['senha'];
 
     // Insere os dados na tabela de Pacientes
     $insere = mysqli_query($connection, "INSERT INTO Paciente(nome, telefone, cpf, endereco, senha)
-                                        VALUES('$nome','$cpf','$telefone','$endereco','$senha')") 
+                                        VALUES('$nome','$telefone','$cpf','$endereco','$senha')") 
                                             or die(mysqli_error());
     
     // Se o registro for inserido com sucesso, redirecione para outra página
