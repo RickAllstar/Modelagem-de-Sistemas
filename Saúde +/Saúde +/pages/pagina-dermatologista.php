@@ -58,13 +58,18 @@
         </div>
       </div>
     </nav>
+    <?php
+
+    $cpf = $_GET['id'];
+    echo($cpf);
+    ?>
     <main class="hero">
       <div class="container">
         <h1>Agendamento Dermatologista</h1>
         <form class="row g-3">
           <div class="col-md-6">
             <label for="inputEmail4" class="form-label">Nome:</label>
-            <input type="text" class="form-control" id="inputEmail4" name="nome" value="<?php echo isset($_SESSION['nome']) ? $_SESSION['nome'] : ''; ?>" />
+            <input type="text" class="form-control" id="inputEmail4" name="nome" value=""
           </div>
           <div class="col-md-6">
             <label for="horario" class="form-label">Horário:</label>

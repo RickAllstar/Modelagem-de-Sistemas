@@ -9,9 +9,10 @@ include_once("connection.php");
         <meta charset="utf-8">
         <title>Login</title>
         <script language="javascript">
-            function sucesso(){
-                window.location='../pages/paciente-dashboard.html';
-            }
+         function sucesso(){
+    window.location = '../pages/paciente-dashboard.php?id=<?php echo $cpf; ?>';
+}
+
             function failed(){
                 setTimeout("window.location='../pages/paciente-login.html'", 2000);
             }
@@ -30,7 +31,8 @@ include_once("connection.php");
             } else {
                 $_SESSION["cpf"]=$_POST["cpf"];
                 $_SESSION["senha"]=$_POST["senha"];
-                echo"<script language='javascript'>sucesso()</script>";
+                header("Location: ../pages/paciente-dashboard.php?id=" . urlencode($cpf));
+                exit(); // Termina a execução do script após o redirecionamento
             }
         ?>
     </body> 

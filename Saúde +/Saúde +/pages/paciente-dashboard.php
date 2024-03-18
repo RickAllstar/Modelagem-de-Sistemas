@@ -58,6 +58,11 @@
         </div>
       </div>
     </nav>
+    <?php
+
+$cpf = $_GET['id'];
+echo($cpf);
+?>
     <main class="hero">
       <div class="card mb-3">
         <img src="../image/oftamologista.jpeg" class="card-img-top" alt="..." />
@@ -88,7 +93,9 @@
             médica, oferecendo uma ampla gama de serviços para manter a
             integridade e a saúde da pele de nossos pacientes.
           </p>
-          <a href="pagina-dermatologista.html" class="btn btn-primary"
+          <a href="pagina-dermatologista.php?id=<?php echo urldecode($cpf); ?>" class="btn btn-primary">
+
+
             >Marcar consulta</a
           >
         </div>
