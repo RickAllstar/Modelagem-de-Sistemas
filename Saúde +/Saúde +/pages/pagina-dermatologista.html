@@ -64,7 +64,7 @@
         <form class="row g-3">
           <div class="col-md-6">
             <label for="inputEmail4" class="form-label">Nome:</label>
-            <input type="text" class="form-control" id="inputEmail4" />
+            <input type="text" class="form-control" id="inputEmail4" name="nome" value="<?php echo isset($_SESSION['nome']) ? $_SESSION['nome'] : ''; ?>" />
           </div>
           <div class="col-md-6">
             <label for="horario" class="form-label">Horário:</label>
@@ -75,10 +75,9 @@
               <!-- Adicione mais opções conforme necessário -->
             </select>
           </div>
-
           <div class="col-md-2">
-            <label for="date" class="form-label">Data</label>
-            <input type="date" class="form-control" id="inputZip" />
+            <label for="data" class="form-label">Data:</label>
+            <input type="date" class="form-control" id="data" name="data" />
           </div>
           <div class="col-12">
             <div class="form-check">
