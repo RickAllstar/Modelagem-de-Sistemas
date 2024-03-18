@@ -1,4 +1,9 @@
 <html lang="en">
+<?php
+// REVISADO - OK
+
+include_once("../databases/connection.php");
+?>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -58,10 +63,32 @@
         </div>
       </div>
     </nav>
-    <?php
-
+                  <?php
 $cpf = $_GET['id'];
-echo($cpf);
+                  
+              $sql = "SELECT * FROM paciente WHERE cpf = '$cpf'";
+
+              // Executa a consulta
+              $result = $connection->query($sql);
+
+              // Verifica se a consulta retornou resultados
+              if ($result->num_rows > 0) {
+                // Loop através dos resultados da consulta
+                while($row = $result->fetch_assoc()) {
+                  // Aqui você pode acessar os dados do paciente
+                  echo "Cod_paciente: " . $row["cod_paciente"] . "<br>";
+                  echo "Nome: " . $row["nome"] . "<br>";
+                  echo "CPF: " . $row["cpf"] . "<br>";
+                  // E assim por diante, dependendo dos campos que você tem na tabela Paciente
+                }
+              } else {
+                echo "0 resultados encontrados";
+              }
+
+              // Fecha a conexão com o banco de dados
+              $connection->close();
+            
+
 ?>
     <main class="hero">
       <div class="card mb-3">
@@ -118,12 +145,5 @@ echo($cpf);
         </div>
       </div>
     </main>
-    <script>
-      function trocarPorRenzoCoins(idDoPremio) {
-        // Adicione a lógica aqui para processar a troca do prêmio por RENZOCOINS
-        // Você pode usar AJAX para enviar a solicitação ao servidor e atualizar a interface do usuário
-        alert("Prêmio " + idDoPremio + " trocado por RENZOCOINS!");
-      }
-    </script>
   </body>
 </html>
