@@ -10,7 +10,7 @@ include_once("connection.php");
         <title>Login</title>
         <script language="javascript">
             function sucesso(){
-                window.location='../pages/medico-dashboard.html';
+                window.location='../pages/medico-dashboard.php;
             }
             function failed(){
                 setTimeout("window.location='../pages/medico-login.html'", 2000);

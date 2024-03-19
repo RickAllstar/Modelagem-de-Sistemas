@@ -11,26 +11,23 @@ session_start();
 
 include_once('connection.php');
 
-// Verifica se o formulário foi enviado
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Verifica se o campo nome não está vazio
-    if (!empty($_POST["nome"])) {
-        // Armazena o nome do paciente na sessão
-        $_SESSION['nome'] = $_POST["nome"];
-    }
+    // Recebe dados do formulário
+    $nome = $_POST['nome'];
+    $data_agendamento = $_POST['data'];
+    $horario = $_POST['horario'];;
 
-    // Verifica se o campo horário não está vazio
-    if (!empty($_POST["horario"])) {
-        // Armazena o horário na sessão
-        $_SESSION['horario'] = $_POST["horario"];
+    // Insere os dados na tabela de Pacientes
+    $insere = mysqli_query($connection, "INSERT INTO dermatologista(nome, data_agendamento, horario)
+                                        VALUES('$nome','$data_agendamento','$horario')") ;
+                                            
+    
+    // Se o registro for inserido com sucesso, redirecione para outra página
+    if ($insere) {
+        header("Location: ../pages/paciente-login.html"); // Substitua 'outra_pagina.php' pelo URL correto
+        exit();
+    } else {
+        echo "Erro ao cadastrar paciente.";
     }
-
-    // Verifica se o campo data não está vazio
-    if (!empty($_POST["data"])) {
-        // Armazena a data na sessão
-        $_SESSION['data'] = $_POST["data"];
-    }
-}
 ?>
 </body>
 </html>

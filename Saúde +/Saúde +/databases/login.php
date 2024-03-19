@@ -12,10 +12,17 @@ include_once("connection.php");
          function sucesso(){
     window.location = '../pages/paciente-dashboard.php?id=<?php echo $cpf; ?>';
 }
+<script type="text/javascript">
+    function showErrorMessage(message) {
+        var errorMessageDiv = document.getElementById('error-message');
+        errorMessageDiv.innerHTML = message;
+        errorMessageDiv.style.display = 'block';
+    }
+</script>
+<script>
+</script>
 
-            function failed(){
-                setTimeout("window.location='../pages/paciente-login.html'", 2000);
-            }
+    </script>
         </script>
     </head>
     <body>
@@ -26,13 +33,22 @@ include_once("connection.php");
             $linhas = mysqli_num_rows($consulta);
             
             if($linhas == 0){
-                echo"<br><br><br><br><br><br><p align = 'center'>Por favor aguarde&hellip;</p>";
-                echo"<script language='javascript'>failed()</script>";
+                echo "<script language='javascript'>showErrorMessage('Dados não encontrados. Por favor, verifique o CPF e a senha e tente novamente.')</script>";
             } else {
                 $_SESSION["cpf"]=$_POST["cpf"];
                 $_SESSION["senha"]=$_POST["senha"];
                 header("Location: ../pages/paciente-dashboard.php?id=" . urlencode($cpf));
                 exit(); // Termina a execução do script após o redirecionamento
+            }
+            
+            $dados_nao_encontrados = true;
+    
+            if ($dados_nao_encontrados) {
+                // Redirecionar de volta para a página de login
+                header("Location: ../pages/paciente-login.html");
+                
+
+                exit; // Certifique-se de sair do script após o redirecionamento
             }
         ?>
     </body> 

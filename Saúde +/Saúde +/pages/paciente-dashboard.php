@@ -76,9 +76,9 @@ $cpf = $_GET['id'];
                 // Loop através dos resultados da consulta
                 while($row = $result->fetch_assoc()) {
                   // Aqui você pode acessar os dados do paciente
-                  echo "Cod_paciente: " . $row["cod_paciente"] . "<br>";
-                  echo "Nome: " . $row["nome"] . "<br>";
-                  echo "CPF: " . $row["cpf"] . "<br>";
+                  "Cod_paciente: " . $row["cod_paciente"] . "<br>";
+                  "Nome: " . $row["nome"] . "<br>";
+                  "CPF: " . $row["cpf"] . "<br>";
                   // E assim por diante, dependendo dos campos que você tem na tabela Paciente
                 }
               } else {
@@ -88,7 +88,6 @@ $cpf = $_GET['id'];
               // Fecha a conexão com o banco de dados
               $connection->close();
             
-
 ?>
     <main class="hero">
       <div class="card mb-3">
@@ -103,8 +102,8 @@ $cpf = $_GET['id'];
             equipe médica, oferecendo cuidados especializados e compassivos a
             indivíduos de todas as idades.
           </p>
-          <a href="pagina-oftamologista.html" class="btn btn-primary"
-            >Marcar consulta</a
+          <a href="pagina-oftamologista.php?id=<?php echo urldecode($cpf); ?>" class="btn btn-primary">
+            Marcar consulta</a
           >
         </div>
       </div>
@@ -123,7 +122,7 @@ $cpf = $_GET['id'];
           <a href="pagina-dermatologista.php?id=<?php echo urldecode($cpf); ?>" class="btn btn-primary">
 
 
-            >Marcar consulta</a
+            Marcar consulta</a
           >
         </div>
       </div>
@@ -139,8 +138,8 @@ $cpf = $_GET['id'];
             médica, oferecendo cuidados abrangentes e holísticos para uma ampla
             variedade de condições médicas e necessidades de saúde.
           </p>
-          <a href="pagina-medicogeral.html" class="btn btn-primary"
-            >Marcar consulta</a
+          <a href="pagina-medicogeral.php?id=<?php echo urldecode($cpf); ?>" class="btn btn-primary">
+            Marcar consulta</a
           >
         </div>
       </div>

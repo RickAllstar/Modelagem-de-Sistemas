@@ -479,6 +479,14 @@ a {
   .conteudo2 {
     display: none;
   }
+  .conteudo1{
+    width: 90%;
+  }
+  
+  .foto{
+    height: 30%;
+    width: 85%;
+  }
 }
 
 /* DASHBOARD PACIENTE RENZO */
@@ -520,4 +528,9 @@ a {
     width: 80%;
     height: 90%;
   }
+}
+
+.ec{
+  font-weight:bolder;
+  color: rgb(0, 185, 0);
 }

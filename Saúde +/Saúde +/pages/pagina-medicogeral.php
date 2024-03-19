@@ -1,4 +1,9 @@
 <html lang="en">
+<?php
+// REVISADO - OK
+
+include_once("../databases/connection.php");
+?>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -58,13 +63,41 @@
         </div>
       </div>
     </nav>
+    <?php
+$cpf = $_GET['id'];
+                  
+              $sql = "SELECT * FROM paciente WHERE cpf = '$cpf'";
+
+              // Executa a consulta
+              $result = $connection->query($sql);
+
+              // Verifica se a consulta retornou resultados
+              if ($result->num_rows > 0) {
+                // Loop através dos resultados da consulta
+                while($row = $result->fetch_assoc()) {
+                  // Aqui você pode acessar os dados do paciente
+                   "Cod_paciente: " . $row["cod_paciente"] . "<br>";
+                   "Nome: " . $row["nome"] . "<br>";
+                   "CPF: " . $row["cpf"] . "<br>";
+                  // E assim por diante, dependendo dos campos que você tem na tabela Paciente
+                  $nome=$row["nome"];
+                }
+              } else {
+                echo "0 resultados encontrados";
+              }
+
+              // Fecha a conexão com o banco de dados
+              $connection->close();
+            
+
+?>
     <main class="hero">
       <div class="container">
-        <h1>Agendamento Oftamologista</h1>
-        <form class="row g-3">
+        <h1>Agendamento Dermatologista</h1>
+        <form class="row g-3" method="POST" action="../databases/dermatologista.php" >
           <div class="col-md-6">
             <label for="inputEmail4" class="form-label">Nome:</label>
-            <input type="text" class="form-control" id="inputEmail4" />
+            <input type="text" class="form-control" id="inputEmail4" name="nome" value="<?php echo($nome)?>"
           </div>
           <div class="col-md-6">
             <label for="horario" class="form-label">Horário:</label>
@@ -75,10 +108,9 @@
               <!-- Adicione mais opções conforme necessário -->
             </select>
           </div>
-
           <div class="col-md-2">
-            <label for="date" class="form-label">Data</label>
-            <input type="date" class="form-control" id="inputZip" />
+            <label for="data" class="form-label">Data:</label>
+            <input type="date" class="form-control" id="data" name="data" />
           </div>
           <div class="col-12">
             <div class="form-check">
@@ -89,7 +121,8 @@
             </div>
           </div>
           <div class="col-12">
-            <button type="submit" class="btn btn-primary" id="btn-agendar">
+            <input type="hidden" name="id" value="<?php echo($id)?>">
+            <a href="confirmacao.html"><button type="submit" class="btn btn-primary" id="btn-agendar"></a>
               Agendar
             </button>
           </div>
