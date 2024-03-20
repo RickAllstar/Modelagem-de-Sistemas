@@ -35,7 +35,14 @@
     <main class="hero">
         <div class="container">
             <?php
-            $sql = "SELECT * FROM dermatologista";
+            /*
+            Query SQL com INNER JOIN para puxar o nome do paciente
+            $sql = "SELECT paciente.nome AS nome, dermatologista.data_agendamento data, dermatologista.horario horario
+                    FROM dermatologista 
+                    INNER JOIN paciente ON dermatologista.cod_paciente = paciente.cod_paciente";
+            */      
+                $sql = "SELECT data_agendamento, horario, nome
+                        FROM dermatologista";
 
             // Executa a consulta
             $result = $connection->query($sql);
@@ -43,11 +50,11 @@
             // Verifica se a consulta retornou resultados
             if ($result->num_rows > 0) {
                 // Inicia a tabela HTML
-
                 echo "<table class='table table-bordered'>";
                 echo "<thead class='thead-dark'>";
                 echo "<tr>";
                 echo "<th>Nome Paciente</th>";
+               
                 echo "<th>Data</th>";
                 echo "<th>Horario</th>";
                 echo "</tr>";
@@ -67,7 +74,8 @@
                 // Fecha a tabela HTML
                 echo "</tbody>";
                 echo "</table>";
-            } else {
+            } 
+            else {
                 echo "0 resultados encontrados";
             }
 
@@ -75,7 +83,7 @@
             $connection->close();
             ?>
             <div class="text-center">
-                <a href="mudaçao.php" class="btn btn-primary">Alterar dados do paciente</a>
+                <a href="mudacao.php" class="btn btn-primary">Alterar dados do paciente</a>
             </div>
         </div>
     </main>

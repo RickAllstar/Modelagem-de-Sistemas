@@ -121,7 +121,7 @@ $cpf = $_GET['id'];
             </div>
           </div>
           <div class="col-12">
-            <input type="hidden" name="id" value="<?php echo($id)?>">
+           
             <a href="confirmacao.html"><button type="submit" class="btn btn-primary" id="btn-agendar"></a>
               Agendar
             </button>
