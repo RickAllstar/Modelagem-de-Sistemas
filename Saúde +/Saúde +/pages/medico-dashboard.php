@@ -54,7 +54,6 @@
                 echo "<thead class='thead-dark'>";
                 echo "<tr>";
                 echo "<th>Nome Paciente</th>";
-               
                 echo "<th>Data</th>";
                 echo "<th>Horario</th>";
                 echo "</tr>";
