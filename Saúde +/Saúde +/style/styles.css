@@ -322,11 +322,18 @@ a {
 }
 .container {
   /* height: 80vh; */
+  
+  justify-content: center;
+  justify-items: center;
   width: 60vw;
   padding: 10px 16px;
   margin: 10px 16px;
   background-color: #cbd7e7;
   border-radius: 20px;
+}
+.container h1{
+  text-align: center;
+
 }
 /* #btn-agendar {
   background-color: #00dbc2; 
@@ -343,7 +350,7 @@ a {
 }
 
 .hamburger::after,
-.hamburger::before {
+.pizza::before::before {
   content: " ";
   display: block;
   width: 30px;

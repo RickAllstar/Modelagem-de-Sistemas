@@ -1,0 +1,64 @@
+INSERT INTO dermatologista
+VALUES ('2024-03-20', '13:00', 1)
+
+
+
+
+CREATE DATABASE clinica_medica; 
+
+CREATE TABLE Paciente (
+cod_paciente INT PRIMARY KEY AUTO_INCREMENT,
+nome CHAR(100) NOT NULL, 
+telefone VARCHAR(20),
+cpf varchar(14), 
+endereco VARCHAR(255), 
+senha varchar(8)
+);
+
+
+CREATE TABLE medico (
+id INT PRIMARY KEY,
+nome CHAR(100) NOT NULL,
+senha varchar(8)
+);
+
+
+CREATE TABLE medicoGeral (
+    data_agendamento DATE NOT NULL,
+    horario TIME NOT NULL,
+    nome char(100)
+);
+
+
+CREATE TABLE oftalmologista (
+    data_agendamento DATE NOT NULL,
+    horario TIME NOT NULL,
+    nome char(100)
+  );
+
+
+CREATE TABLE dermatologista(
+    data_agendamento DATE NOT NULL,
+    horario TIME NOT NULL,
+    nome char(100)
+);
+
+
+
+//base de dados da tabela medico
+
+INSERT INTO medico (id, nome, senha) VALUES 
+('1280','Victor Laurent','0902'),
+('1320','Vitor Gabriel','1239'), 
+('2222','Ian Novais','9807'), 
+('1722','Alvaro Barcelos','5262'), 
+('3415','Natã Emanuel','7283')
+
+
+
+
+
+
+
+
+

@@ -93,8 +93,8 @@ $cpf = $_GET['id'];
 ?>
     <main class="hero">
       <div class="container">
-        <h1>Agendamento Dermatologista</h1>
-        <form class="row g-3" method="POST" action="../databases/dermatologista.php" >
+        <h1>Agendamento Medico Geral</h1>
+        <form class="row g-3" method="POST" action="../databases/oftamologista.php" >
           <div class="col-md-6">
             <label for="inputEmail4" class="form-label">Nome:</label>
             <input type="text" class="form-control" id="inputEmail4" name="nome" value="<?php echo($nome)?>"
@@ -121,7 +121,7 @@ $cpf = $_GET['id'];
             </div>
           </div>
           <div class="col-12">
-            <input type="hidden" name="id" value="<?php echo($id)?>">
+           
             <a href="confirmacao.html"><button type="submit" class="btn btn-primary" id="btn-agendar"></a>
               Agendar
             </button>

@@ -88,12 +88,15 @@ include_once("../databases/connection.php");
             <div class="mb-3">
                 <label for="codigo_paciente" class="form-label">Selecione o código do paciente:</label>
                 <select class="form-select" id="codigo_paciente" name="codigo_paciente">
-                    <?php
-                    $sql = "SELECT cod_paciente, nome FROM paciente";
+                   
+                   <?php
+                    $sql = "SELECT cod_paciente, nome 
+                            FROM paciente";
+
                     $result = $connection->query($sql);
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<option value='" . $row["cod_paciente"] . "'>" . $row["cod_paciente"] . " - " . $row["nome"] . "</option>";
-                    }
+                            while ($row = $result->fetch_assoc()) {
+                                                                    echo "<option value='" . $row["cod_paciente"] . "'>" . $row["cod_paciente"] . " - " . $row["nome"] . "</option>";
+                                                                  }
                     ?>
                 </select>
             </div>

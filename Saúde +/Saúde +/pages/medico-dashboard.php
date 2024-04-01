@@ -34,13 +34,14 @@
     </nav>
     <main class="hero">
         <div class="container">
+            <center><h1>Consultas </h1></center>
             <?php
-            /*
-            Query SQL com INNER JOIN para puxar o nome do paciente
-            $sql = "SELECT paciente.nome AS nome, dermatologista.data_agendamento data, dermatologista.horario horario
-                    FROM dermatologista 
-                    INNER JOIN paciente ON dermatologista.cod_paciente = paciente.cod_paciente";
-            */      
+            
+            // Query SQL com INNER JOIN para puxar o nome do paciente
+            // $sql = "SELECT paciente.nome AS nome, dermatologista.data_agendamento data, dermatologista.horario horario
+            //         FROM dermatologista 
+            //         INNER JOIN paciente ON dermatologista.cod_paciente = paciente.cod_paciente";
+                 
                 $sql = "SELECT data_agendamento, horario, nome
                         FROM dermatologista";
 

@@ -14,20 +14,37 @@ include_once('connection.php');
     // Recebe dados do formulário
     $nome = $_POST['nome'];
     $data_agendamento = $_POST['data'];
-    $horario = $_POST['horario'];;
+    $horario = $_POST['horario'];
+
+
+    $consulta = mysqli_query($connection, "SELECT nome, cod_paciente as codigo
+                                            FROM Paciente
+                                            WHERE nome = '$nome'");
+
+        while ($resultado = mysqli_fetch_array($consulta)){
+                                                             $resultado['codigo'];
+                                                          }
+
+            $insere = mysqli_query($connection, "INSERT INTO medicogeral(data_agendamento, horario, nome)
+                                                 VALUES('$data_agendamento','$horario','$nome')");
+                
+
+      // Se o registro for inserido com sucesso, redirecione para outra página
+       if ($insere) {
+                     header("Location: ../pages/paciente-login.html"); // Substitua 'outra_pagina.php' pelo URL correto
+                    exit();
+                    } 
+            else {
+                  echo "Erro ao cadastrar paciente.";
+                 }
+
+
+      
 
     // Insere os dados na tabela de Pacientes
-    $insere = mysqli_query($connection, "INSERT INTO medicogeral(nome, data_agendamento, horario)
-                                        VALUES('$nome','$data_agendamento','$horario')") ;
-                                            
     
-    // Se o registro for inserido com sucesso, redirecione para outra página
-    if ($insere) {
-        header("Location: ../pages/paciente-login.html"); // Substitua 'outra_pagina.php' pelo URL correto
-        exit();
-    } else {
-        echo "Erro ao cadastrar paciente.";
-    }
+    
+    
 ?>
 </body>
 </html>
